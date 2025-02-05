@@ -3,10 +3,6 @@
 void Reciever::init(){
   pinMode(CH1, INPUT);
   pinMode(CH2, INPUT);
-  pinMode(CH3, INPUT);
-  pinMode(CH4, INPUT);
-  pinMode(CH5, INPUT);
-  pinMode(CH6, INPUT);
 }
 
 
@@ -15,7 +11,7 @@ void Reciever::init(){
 int Reciever::readChannel(int channelInput, int minLimit, int maxLimit, int defaultValue){
   int ch = pulseIn(channelInput, HIGH, 30000);
   if (ch < 100) return defaultValue;
-  return map(ch, 1000, 2000, minLimit, maxLimit);
+  return map(ch, 1000, 1980, minLimit, maxLimit);
 }
 
 // Read the switch channel and return a boolean value
